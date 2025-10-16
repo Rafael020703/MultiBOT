@@ -1,0 +1,17 @@
+{
+  "name": "multi-discord-bots",
+  "version": "1.0.0",
+  "description": "A project to host multiple Discord bots using JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install && node install-bots.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.0.0",
+    "concurrently": "^7.0.0"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}
