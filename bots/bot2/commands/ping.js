@@ -3,8 +3,10 @@ const { SlashCommandBuilder } = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('ping')
-        .setDescription('Responde com Pong!'),
+        .setDescription('Mostra o ping do bot'),
     async execute(interaction) {
-        await interaction.reply({ content: 'Pong!', ephemeral: true });
-    },
+        const sent = await interaction.reply({ content: 'Calculando ping...', fetchReply: true });
+        const ms = sent.createdTimestamp - interaction.createdTimestamp;
+        await interaction.editReply(`🏓 Ping: ${ms}ms`);
+    }
 };
